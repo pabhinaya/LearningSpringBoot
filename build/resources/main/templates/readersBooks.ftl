@@ -20,4 +20,5 @@
     </#list>
 </body>
 </table>
+<a href="/addBook">Add more books </a>
 </html>

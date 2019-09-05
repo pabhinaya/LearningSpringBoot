@@ -41,4 +41,17 @@ public class ReadingListController {
          return "readersBooks";
     }
 
+    @GetMapping("/addBook")
+    public String addBookForm() {
+        return "addBook";
+    }
+
+    @PostMapping("/addToBookList")
+    public String addBookToList(Book book) {
+        String reader = SecurityContextHolder.getContext().getAuthentication().getName();
+        book.setReader(reader);
+        bookRepository.save(book);
+        return "redirect:myList";
+    }
+
 }
